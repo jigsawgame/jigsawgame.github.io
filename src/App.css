@@ -1,0 +1,258 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h1, p {
+  font-family: Lato;
+}
+
+.started .image{
+  cursor: move;
+}
+
+.highlight .overlay {
+    opacity: 0.3;
+    z-index: 1;
+    background: green;
+    width: 100%;
+    height: 100%;
+}
+
+.current-drag .image {
+  width: 95% !important;
+  border: 2px solid gray;
+}
+
+button {
+  padding: 4px;
+  margin: 0 10px 5px 0;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  background: #2c3e50;
+  height: 60px;
+}
+
+.container.bottom {
+  margin-top: 100px;
+}
+
+.wave {
+  top: 10px;
+  position: absolute;
+  height: 70px;
+  width: 100%;
+  background: #2c3e50;
+  bottom: 0;
+}
+
+.wave::before, .wave::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+}
+
+.wave::before {
+  width: 53.5%;
+  height: 110%;
+  background-color: lightsalmon;
+  right: 0;
+  top: 60%;
+}
+.wave::after {
+  width: 54.5%;
+  height: 105%;
+  background-color: #2c3e50;
+  left: 0;
+  top: 33%;
+}
+
+.wave.bottom:before {
+  top: -51%;
+  background: #2c3e50;
+}
+.wave.bottom:after {
+  top: -79%;
+  background: lightsalmon;
+}
+.button-container {
+  position: absolute;
+  z-index: 1;
+  top: 25px;
+  left: 5px;
+}
+.button-container.bottom {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 98%;
+}
+.mid-section {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 400px;
+}
+.rules {
+  width: 380px;
+  color: white;
+  top: 150px;
+  position: absolute;
+  padding: 10px;
+  right: 0px;
+  background: lightsalmon;
+}
+
+.rules li {
+  margin-bottom: 10px;
+}
+
+.image-container {
+  top: 50px; 
+  padding-left: 10px; 
+  position: relative;
+}
+
+.zoom-buttons {
+    background: white;
+    color: black;
+    height: 25px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.zoom-buttons button {
+  margin: 0;
+  width: 15.5px;
+  height: 25px;
+  border-radius: 0;
+}
+
+.game-loading {
+  width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+
+.progress { 
+  width: 100%;
+  height: 4px;
+  background: #555;
+  border-radius: 5px;
+  padding: 4px 1px;
+}
+
+.progress > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(43,194,83);
+  position: relative;
+  overflow: hidden;
+}
+
+.orange > span {
+  background-color: #f1a165;
+  background-image: linear-gradient(to bottom, #f1a165, #f36d0a);
+}
+
+.red > span {
+  background-color: #f0a3a3;
+  background-image: linear-gradient(to bottom, #f0a3a3, #f42323);
+}
+
+button {
+  border: 1px solid gray;
+}
+
+select {
+  border: 1px solid gray;
+}
+
+.switch-checkbox {
+  display: none;
+}
+
+.switch-label {
+  display: inline-block;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 40px;
+  height: 25px;
+  background: grey;
+  border-radius: 100px;
+  position: relative;
+  transition: background-color .2s;
+  overflow: hidden;
+  top: 10px;
+}
+
+.switch-label .switch-button {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 45px;
+  transition: 0.2s;
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+}
+
+.switch-checkbox:checked + .switch-label .switch-button {
+  left: calc(50% - 2px);
+}
+
+.switch-label:active .switch-button {
+  width: 20px;
+}
+
+button {
+  border-radius: 5px;
+}
