@@ -58,11 +58,16 @@ type MyState = {
 const useStyles = makeStyles((theme) => ({
   appBar: {
     position: 'relative',
+    backgroundColor: 'lightsalmon',
+    color: 'white'
   },
   title: {
-    marginLeft: theme.spacing(2),
     flex: 1,
   },
+  button: {
+    position: 'absolute',
+    right: '5px'
+  }
 }));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -443,27 +448,24 @@ const App = () => {
 
       {/*
  // @ts-ignore */}
-      <Dialog fullScreen open={dialogOpen} onClose={handleClose} TransitionComponent={Transition}>
+      <Dialog fullWidth open={dialogOpen} onClose={handleClose} TransitionComponent={Transition}>
         <AppBar className={classes.appBar}>
           <Toolbar>
-            <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-              <CloseIcon />
-            </IconButton>
             <Typography variant="h6" className={classes.title}>
-              Sound
+              Welcome to JigsawGame
             </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
-              save
+            <Button autoFocus color="inherit" className={classes.button} onClick={handleClose}>
+              <CloseIcon />
             </Button>
           </Toolbar>
         </AppBar>
         <List>
           <ListItem button>
-            <ListItemText primary="Phone ringtone" secondary="Titania" />
+            <ListItemText primary="Play and learn" secondary="Computer programming" />
           </ListItem>
           <Divider />
           <ListItem button>
-            <ListItemText primary="Default notification ringtone" secondary="Tethys" />
+            <ListItemText primary="JavaScript, HTML, CSS" secondary="ReactJS" />
           </ListItem>
         </List>
       </Dialog>
